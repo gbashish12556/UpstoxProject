@@ -11,8 +11,8 @@ class UpstoxRepoImpl@Inject constructor(
 
 ):UpstoxRepo {
 
-    override suspend fun getStocks(): StockList {
-        TODO("Not yet implemented")
+    override suspend fun getStocks(userId:String): StockList {
+        return api.getStocks(userId)
     }
 
 }
