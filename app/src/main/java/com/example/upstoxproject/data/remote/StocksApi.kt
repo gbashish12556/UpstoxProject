@@ -6,8 +6,8 @@ import retrofit2.http.Path
 
 interface StocksApi{
 
-    @GET("v3/{userId}")
-    suspend fun getStocks(@Path("userId") userId:String):StockListResponse;
+    @GET("v3/6d0ad460-f600-47a7-b973-4a779ebbaeaf")
+    suspend fun getStocks():StockListResponse;
 
 
 }

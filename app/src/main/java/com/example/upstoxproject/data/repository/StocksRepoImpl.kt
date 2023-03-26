@@ -12,9 +12,9 @@ class StocksRepoImpl@Inject constructor(
 
 ):StocksRepo {
 
-    override suspend fun getStocks(userId:String): StockList {
+    override suspend fun getStocks(): StockList {
 
-        val stockList = api.getStocks(userId).data.map { it.toStock() }
+        val stockList = api.getStocks().data.map { it.toStock() }
 
         return StockList(
             stockList = stockList,

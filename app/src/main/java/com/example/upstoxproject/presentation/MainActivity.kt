@@ -31,10 +31,10 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     val navController = rememberNavController()
-                    NavHost(navController = navController, startDestination = Screen.StockListScreen.route+"/${userId}" ){
+                    NavHost(navController = navController, startDestination = Screen.StockListScreen.route ){
 
                         composable(
-                            route = Screen.StockListScreen.route+"/{${Constants.USER_ID}}"
+                            route = Screen.StockListScreen.route
                         ){
                             StockListScreen()
                         }

@@ -4,6 +4,6 @@ import com.example.upstoxproject.domain.models.StockList
 
 interface StocksRepo {
 
-    suspend fun getStocks(userId:String): StockList
+    suspend fun getStocks(): StockList
 
 }

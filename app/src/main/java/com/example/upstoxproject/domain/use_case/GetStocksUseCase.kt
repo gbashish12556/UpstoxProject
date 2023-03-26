@@ -12,12 +12,12 @@ import javax.inject.Inject
 class GetStocksUseCase @Inject constructor(
     private val repository: StocksRepo
 ) {
-    operator fun invoke(userId:String) = flow {
+    operator fun invoke() = flow {
 
         try {
 
             emit(Resource.Loading<StockList>())
-            val stocks = repository.getStocks(userId)
+            val stocks = repository.getStocks()
             emit(Resource.Success<StockList>(stocks))
 
         } catch (e: HttpException) {

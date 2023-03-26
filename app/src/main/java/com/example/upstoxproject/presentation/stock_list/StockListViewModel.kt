@@ -15,8 +15,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class StockListViewModel @Inject constructor(
-    val getStocksUseCase: GetStocksUseCase,
-    savedStateHandle: SavedStateHandle
+    val getStocksUseCase: GetStocksUseCase
 
 ): ViewModel(){
 
@@ -25,18 +24,14 @@ class StockListViewModel @Inject constructor(
 
     init {
 
-        savedStateHandle.get<String>(Constants.USER_ID)?.let { userId->
+            getStocks()
 
-            getStocks(userId)
-
-        }
 
     }
 
-    private fun getStocks(userId:String) {
+    private fun getStocks() {
 
-
-        getStocksUseCase(userId).onEach {result->
+        getStocksUseCase().onEach {result->
             when(result){
                 is Resource.Success->{
                     _state.value = StockListState(stocks = result.data)
