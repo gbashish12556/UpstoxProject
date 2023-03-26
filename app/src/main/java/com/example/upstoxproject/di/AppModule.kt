@@ -3,7 +3,7 @@ package com.example.upstoxproject.di
 import com.example.upstoxproject.data.remote.StocksApi
 import com.example.upstoxproject.data.repository.StocksRepoImpl
 import com.example.upstoxproject.domain.repository.StocksRepo
-import com.plcoding.cryptocurrencyappyt.common.Constants
+import com.example.upstoxproject.common.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -14,7 +14,9 @@ import com.example.upstoxproject.common.Constants
 import com.example.upstoxproject.presentation.Screen
 import com.example.upstoxproject.presentation.stock_list.StockListScreen
 import com.example.upstoxproject.ui.theme.UpstoxProjectTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     val userId = "6d0ad460-f600-47a7-b973-4a779ebbaeaf"
