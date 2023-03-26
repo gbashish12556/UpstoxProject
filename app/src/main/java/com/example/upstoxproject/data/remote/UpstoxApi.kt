@@ -6,8 +6,8 @@ import retrofit2.http.Path
 
 interface UpstoxApi{
 
-    @GET("v3/6d0ad460-f600-47a7-b973-4a779ebbaeaf")
-    suspend fun getCoins():StockList;
+    @GET("v3/{userId}")
+    suspend fun getCoins(@Path("userId") userId:String):StockList;
 
 
 }
