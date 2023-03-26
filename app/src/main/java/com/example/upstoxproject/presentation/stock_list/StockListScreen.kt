@@ -19,7 +19,9 @@ fun StockListScreen(
     viewModel: StockListViewModel =  hiltViewModel()
 ){
     val state = viewModel.state.value;
-    Box(modifier = Modifier.fillMaxSize()){
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .padding(10.dp)){
 
         Column(
             modifier = Modifier.fillMaxSize()
@@ -27,7 +29,7 @@ fun StockListScreen(
 
            state.stocks?.let {stocks->
 
-               LazyColumn(modifier = Modifier.height(400.dp)){
+               LazyColumn(modifier = Modifier.height(480.dp)){
                 items(stocks.stockList){stock->
 
                     StockListItem(stock = stock)
@@ -35,17 +37,37 @@ fun StockListScreen(
                 }
             }
 
-            Text(modifier = Modifier.fillMaxWidth(),
-                text = "Current Value :  Rs ${stocks.currentValue}")
+              Row(modifier = Modifier.fillMaxWidth().padding(10.dp),
+                      horizontalArrangement = Arrangement.SpaceBetween) {
 
-            Text(modifier = Modifier.fillMaxWidth(),
-                text = "Total Investment :  Rs ${stocks.totalInvestment}")
+                  Text(text = "Current Value :")
+                  Text(text = "Rs. ${stocks.currentValue}")
 
-            Text(modifier = Modifier.fillMaxWidth(),
-                text = "Today's P/L :  Rs ${stocks.todayPnl}")
+              }
 
-            Text(modifier = Modifier.fillMaxWidth(),
-                text = "Total P/L :  Rs ${(stocks.currentValue - stocks.totalInvestment)}")
+               Row(modifier = Modifier.fillMaxWidth().padding(10.dp),
+                   horizontalArrangement = Arrangement.SpaceBetween) {
+
+                   Text(text = "Total Investment :")
+                   Text(text = "Rs. ${stocks.totalInvestment}")
+
+               }
+
+               Row(modifier = Modifier.fillMaxWidth().padding(10.dp),
+                   horizontalArrangement = Arrangement.SpaceBetween) {
+
+                   Text(text = "Today's P/L :")
+                   Text(text = "Rs. ${stocks.todayPnl}")
+
+               }
+
+               Row(modifier = Modifier.fillMaxWidth().padding(10.dp),
+                   horizontalArrangement = Arrangement.SpaceBetween) {
+
+                   Text(text = "Total P/L :")
+                   Text(text = "Rs. ${(stocks.currentValue - stocks.totalInvestment)}")
+
+               }
 
            }
 

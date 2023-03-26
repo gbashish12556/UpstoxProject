@@ -1,11 +1,14 @@
 package com.example.upstoxproject.presentation.stock_list.component
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.DarkGray
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.upstoxproject.domain.models.Stock
@@ -22,7 +25,7 @@ fun StockListItem(
 
     ) {
 
-        Column(modifier = Modifier.width(200.dp)) {
+        Column {
 
 
             Text(
@@ -41,7 +44,7 @@ fun StockListItem(
 
         }
 
-        Column(modifier = Modifier.width(200.dp)) {
+        Column {
 
 
             Text(
@@ -52,14 +55,17 @@ fun StockListItem(
             )
 
             Text(
-                text = "P/L : Rs. ${stock.pnl}",
+                text = "P/L : Rs. ${stock.pnl.toFloat()}",
                 color = Color.Black,
                 style = MaterialTheme.typography.body2,
                 overflow =  TextOverflow.Ellipsis,
             )
 
+
         }
 
     }
+
+    Spacer(modifier = Modifier.height(1.dp).fillMaxWidth().background(color = Color.Black))
 
 }

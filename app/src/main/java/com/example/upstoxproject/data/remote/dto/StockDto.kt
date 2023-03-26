@@ -33,6 +33,6 @@ fun StockDto.toStock():Stock{
         symbol = symbol,
         currentValue = ltp*quantity,
         investmentValue = avg_price.toDouble()*quantity,
-        pnl = (close-ltp)*quantity
+        pnl = ((close-ltp)*quantity)
     )
 }
