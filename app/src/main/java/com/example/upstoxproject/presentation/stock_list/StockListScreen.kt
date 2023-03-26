@@ -32,6 +32,18 @@ fun StockListScreen(
                 }
             }
 
+            Text(modifier = Modifier.fillMaxWidth(),
+                text = "Current Value :  Rs ${state.stocks!!.currentValue}")
+
+            Text(modifier = Modifier.fillMaxWidth(),
+                text = "Total Investment :  Rs ${state.stocks!!.totalInvestment}")
+
+            Text(modifier = Modifier.fillMaxWidth(),
+                text = "Today's P/L :  Rs ${state.stocks!!.todayPnl}")
+
+            Text(modifier = Modifier.fillMaxWidth(),
+                text = "Total P/L :  Rs ${(state.stocks!!.currentValue - state.stocks!!.totalInvestment)}")
+
         }
 
 

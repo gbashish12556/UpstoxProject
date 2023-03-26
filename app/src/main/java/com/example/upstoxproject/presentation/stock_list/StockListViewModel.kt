@@ -25,9 +25,9 @@ class StockListViewModel @Inject constructor(
 
     init {
 
-        savedStateHandle.get<String>(Constants.USER_ID)?.let { coinId->
+        savedStateHandle.get<String>(Constants.USER_ID)?.let { userId->
 
-            getStocks(coinId)
+            getStocks(userId)
 
         }
 
