@@ -12,6 +12,7 @@ import androidx.compose.ui.graphics.Color.Companion.DarkGray
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.upstoxproject.domain.models.Stock
+import androidx.compose.ui.res.stringResource
 
 @Composable
 fun StockListItem(

@@ -9,10 +9,12 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.upstoxproject.presentation.stock_list.component.StockListItem
+import androidx.compose.ui.res.stringResource
 
 @Composable
 fun StockListScreen(
@@ -37,7 +39,9 @@ fun StockListScreen(
                 }
             }
 
-              Row(modifier = Modifier.fillMaxWidth().padding(10.dp),
+              Row(modifier = Modifier
+                  .fillMaxWidth()
+                  .padding(10.dp),
                       horizontalArrangement = Arrangement.SpaceBetween) {
 
                   Text(text = "Current Value :")
@@ -45,7 +49,9 @@ fun StockListScreen(
 
               }
 
-               Row(modifier = Modifier.fillMaxWidth().padding(10.dp),
+               Row(modifier = Modifier
+                   .fillMaxWidth()
+                   .padding(10.dp),
                    horizontalArrangement = Arrangement.SpaceBetween) {
 
                    Text(text = "Total Investment :")
@@ -53,7 +59,9 @@ fun StockListScreen(
 
                }
 
-               Row(modifier = Modifier.fillMaxWidth().padding(10.dp),
+               Row(modifier = Modifier
+                   .fillMaxWidth()
+                   .padding(10.dp),
                    horizontalArrangement = Arrangement.SpaceBetween) {
 
                    Text(text = "Today's P/L :")
@@ -61,7 +69,9 @@ fun StockListScreen(
 
                }
 
-               Row(modifier = Modifier.fillMaxWidth().padding(10.dp),
+               Row(modifier = Modifier
+                   .fillMaxWidth()
+                   .padding(10.dp),
                    horizontalArrangement = Arrangement.SpaceBetween) {
 
                    Text(text = "Total P/L :")
