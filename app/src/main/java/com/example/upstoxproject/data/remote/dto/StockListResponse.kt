@@ -1,6 +1,6 @@
 package com.example.upstoxproject.data.remote.dto
 
-data class StockList(
+data class StockListResponse(
     val client_id: String,
     val `data`: List<StockDto>,
     val error: Any,

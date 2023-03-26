@@ -1,8 +1,8 @@
 package com.example.upstoxproject.domain.repository
 
-import com.example.upstoxproject.data.remote.dto.StockList
+import com.example.upstoxproject.domain.models.StockList
 
-interface UpstoxRepo {
+interface StocksRepo {
 
     suspend fun getStocks(userId:String): StockList
 

@@ -1,8 +1,8 @@
 package com.example.upstoxproject.di
 
 import com.example.upstoxproject.data.remote.UpstoxApi
-import com.example.upstoxproject.data.repository.UpstoxRepoImpl
-import com.example.upstoxproject.domain.repository.UpstoxRepo
+import com.example.upstoxproject.data.repository.StocksRepoImpl
+import com.example.upstoxproject.domain.repository.StocksRepo
 import com.plcoding.cryptocurrencyappyt.common.Constants
 import dagger.Module
 import dagger.Provides
@@ -30,8 +30,8 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideCoinRepository(api:UpstoxApi): UpstoxRepo {
-        return UpstoxRepoImpl(api)
+    fun provideCoinRepository(api:UpstoxApi): StocksRepo {
+        return StocksRepoImpl(api)
     }
 
 
