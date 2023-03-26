@@ -14,23 +14,9 @@ class GetStocksUseCase @Inject constructor(
 ) {
     operator fun invoke() = flow {
 
-        try {
-
             emit(Resource.Loading<StockList>())
             val stocks = repository.getStocks()
-            emit(Resource.Success<StockList>(stocks))
+            emit(stocks)
 
-        } catch (e: HttpException) {
-            emit(
-                Resource.Error<StockList>(
-                    message = e.localizedMessage ?: "An unexpected error occured"
-                )
-            )
-
-        } catch (e: IOException) {
-
-            emit(Resource.Error<StockList>(message = "Couldn't reach server. Check your internet connection."))
-
-        }
     }
 }
