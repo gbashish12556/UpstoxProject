@@ -25,24 +25,29 @@ fun StockListScreen(
             modifier = Modifier.fillMaxSize()
         ) {
 
-            LazyColumn(modifier = Modifier.height(400.dp)){
-                items(state.stocks!!.stockList){stock->
+           state.stocks?.let {stocks->
+
+               LazyColumn(modifier = Modifier.height(400.dp)){
+                items(stocks.stockList){stock->
 
                     StockListItem(stock = stock)
+
                 }
             }
 
             Text(modifier = Modifier.fillMaxWidth(),
-                text = "Current Value :  Rs ${state.stocks!!.currentValue}")
+                text = "Current Value :  Rs ${stocks.currentValue}")
 
             Text(modifier = Modifier.fillMaxWidth(),
-                text = "Total Investment :  Rs ${state.stocks!!.totalInvestment}")
+                text = "Total Investment :  Rs ${stocks.totalInvestment}")
 
             Text(modifier = Modifier.fillMaxWidth(),
-                text = "Today's P/L :  Rs ${state.stocks!!.todayPnl}")
+                text = "Today's P/L :  Rs ${stocks.todayPnl}")
 
             Text(modifier = Modifier.fillMaxWidth(),
-                text = "Total P/L :  Rs ${(state.stocks!!.currentValue - state.stocks!!.totalInvestment)}")
+                text = "Total P/L :  Rs ${(stocks.currentValue - stocks.totalInvestment)}")
+
+           }
 
         }
 

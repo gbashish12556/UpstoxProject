@@ -8,7 +8,7 @@ data class StockDto(
     val ltp: Double,
     val quantity: Int,
     val symbol: String,
-    val close: Int,
+    val close: Double,
 
     val cnc_used_quantity: Int,
     val collateral_qty: Int,
