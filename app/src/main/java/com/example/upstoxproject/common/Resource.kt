@@ -1,4 +1,4 @@
-package com.plcoding.cryptocurrencyappyt.common
+package com.example.upstoxproject.common
 
 sealed class Resource<out T>(val data:T? = null, val message:String? = null) {
 

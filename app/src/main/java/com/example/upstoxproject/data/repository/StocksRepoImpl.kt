@@ -1,6 +1,6 @@
 package com.example.upstoxproject.data.repository
 
-import com.example.upstoxproject.data.remote.UpstoxApi
+import com.example.upstoxproject.data.remote.StocksApi
 import com.example.upstoxproject.data.remote.dto.toStock
 import com.example.upstoxproject.domain.models.StockList
 import com.example.upstoxproject.domain.repository.StocksRepo
@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class StocksRepoImpl@Inject constructor(
 
-    private val api:UpstoxApi
+    private val api:StocksApi
 
 ):StocksRepo {
 
